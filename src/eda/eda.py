@@ -43,7 +43,7 @@ def saveimg(name,fig=None):
     plt.close()
 
 if __name__ == '__main__':
-    df = pd.read_csv(os.path.join(ROOT_DIR, 'sensex_data\\sensex.csv'))
+    df = pd.read_csv(os.path.join(ROOT_DIR, 'sensex_data\\raw\\sensex.csv'))
 
     print(df.isna().sum())
 
@@ -70,7 +70,7 @@ if __name__ == '__main__':
         saveimg(f'{col.lower()}_kde')
 
         plt.figure(figsize=(12,8))
-        df[col].plot(kind='hist', bins=20)
+        df[col].plot(kind='hist', bins=200)
         saveimg(f'{col.lower()}_hist')
 
         plt.figure(figsize=(12,8))
